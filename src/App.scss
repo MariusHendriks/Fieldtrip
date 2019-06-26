@@ -1,0 +1,88 @@
+$black: #1d1916;
+$grey1: #313131;
+
+* {
+  overflow-x: hidden;
+}
+.header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  height: 110vh;
+  flex-direction: column;
+  background-color: $black;
+}
+.headerIcon {
+  width: 50%;
+  margin-top: 30vh;
+}
+.swipeicon {
+  width: 15%;
+  margin-top: 30vh;
+}
+
+.Yo {
+  height: 100vh;
+  background-color: green;
+}
+h1 {
+  color: white;
+  text-transform: uppercase;
+}
+.title {
+  overflow: hidden;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.line {
+  background-color: white;
+  height: 2px;
+  width: 40vw;
+  margin-top: -2vh;
+}
+
+//Shows
+.shows {
+  clip-path: polygon(0 6%, 100% 0, 100% calc(100% - 10vw), 0 100%);
+  min-height: 30vh;
+  background-color: $grey1;
+  padding-bottom: 10vw;
+  margin-bottom: -10vw;
+  margin-top: -10vw;
+}
+.show {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 1vh 0 1vh 0;
+}
+.leftSide {
+  width: 20vw;
+  text-align: center;
+  font-size: 9vw;
+  padding-right: 5vw;
+}
+.day {
+  font-weight: bold;
+}
+.month {
+  font-size: 8vw;
+}
+.rightSide {
+  width: 60vw;
+  font-size: 5.5vw;
+}
+
+//Band
+.band {
+  background-color: $black;
+  padding-top: 10vw;
+}
+.groupPhoto {
+  width: 100vw;
+}
