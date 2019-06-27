@@ -85,7 +85,8 @@ h1 {
 .band {
   background-color: $black;
   padding-top: 10vw;
-  min-height: 90vh;
+  height: 90vh;
+  min-height: 770px;
 }
 .groupPhoto {
   width: 100vw;
@@ -122,16 +123,19 @@ h1 {
   flex-direction: column;
   background-color: $white;
   height: 20vh;
+  min-height: 165px;
   border-radius: 0 0 10px 10px;
 }
 .instrument {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 3vh;
+  min-height: 23px;
 }
 .name {
   font-weight: bold;
   font-size: 2.5vh;
+  min-height: 20px;
 }
 .slick-dots {
   position: relative;
@@ -154,13 +158,14 @@ h1 {
 }
 //social
 .social {
-  margin-top: -4vh;
-  clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0 90%);
+  margin-top: -6vh;
+  clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0 calc(100% - 6vw));
   background-color: $grey1;
   color: $white;
   text-align: center;
   font-size: 6vw;
-  min-height: 40vh;
+  height: 40vh;
+  min-height: 357px;
 }
 .italic {
   font-style: italic;
@@ -174,4 +179,21 @@ h1 {
   margin: 3vw;
   height: 27vw;
   width: calc(100%-27vw);
+}
+.bookings {
+  background-color: $black;
+  margin-top: -4vh;
+  padding-top: 4vh;
+  color: $white;
+  height: 34vh;
+  min-height: 230px;
+}
+.bookingText {
+  text-align: center;
+  font-size: 3vh;
+  padding: 1vh 10vw 2vh 10vw;
+}
+.bookingsDetails {
+  padding: 0 10vw;
+  font-size: 2.5vh;
 }
