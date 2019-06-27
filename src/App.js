@@ -5,6 +5,7 @@ import "./App.scss";
 import Header from "./components/Header";
 import Shows from "./components/Shows/Shows";
 import Band from "./components/Band/Band";
+import Social from "./components/Social/Social";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Shows />
       <Band />
+      <Social />
     </div>
   );
 }

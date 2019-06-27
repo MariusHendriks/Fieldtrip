@@ -1,5 +1,8 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 $black: #1d1916;
 $grey1: #313131;
+$white: #fff;
 
 * {
   overflow-x: hidden;
@@ -26,7 +29,7 @@ $grey1: #313131;
   background-color: green;
 }
 h1 {
-  color: white;
+  color: $white;
   text-transform: uppercase;
 }
 .title {
@@ -82,7 +85,93 @@ h1 {
 .band {
   background-color: $black;
   padding-top: 10vw;
+  min-height: 90vh;
 }
 .groupPhoto {
   width: 100vw;
+  margin-bottom: 5vh;
+}
+.card {
+  background-color: $white;
+  width: 45vw !important;
+  margin: 0 3vw;
+  background-color: $black;
+  border-collapse: separate;
+}
+.cardImageBox {
+  height: 15vh;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.cardImage {
+  width: 100%;
+
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.dots {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BandSliderText {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-color: $white;
+  height: 20vh;
+  border-radius: 0 0 10px 10px;
+}
+.instrument {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3vh;
+}
+.name {
+  font-weight: bold;
+  font-size: 2.5vh;
+}
+.slick-dots {
+  position: relative;
+  bottom: 0;
+  margin-top: 1vh;
+}
+.slick-dots ul {
+  padding-inline-start: 0px;
+}
+
+.slick-dots li button:before {
+  color: $white;
+  opacity: 50%;
+  font-size: 9px;
+}
+.slick-dots li.slick-active button:before {
+  color: $white;
+  opacity: 100%;
+  font-size: 9px;
+}
+//social
+.social {
+  margin-top: -4vh;
+  clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0 90%);
+  background-color: $grey1;
+  color: $white;
+  text-align: center;
+  font-size: 6vw;
+  min-height: 40vh;
+}
+.italic {
+  font-style: italic;
+  margin-top: 1vh;
+}
+.socialImages {
+  display: flex;
+  justify-content: center;
+}
+.socialImage {
+  margin: 3vw;
+  height: 27vw;
+  width: calc(100%-27vw);
 }
