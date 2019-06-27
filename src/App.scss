@@ -166,6 +166,9 @@ h1 {
   font-size: 6vw;
   height: 40vh;
   min-height: 357px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .italic {
   font-style: italic;
