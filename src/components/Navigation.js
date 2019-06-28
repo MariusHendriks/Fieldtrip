@@ -5,8 +5,7 @@ import Shows from "./Shows/Shows";
 import Band from "./Band/Band";
 import Social from "./Social/Social";
 import Bookings from "./Bookings/Bookings";
-import SocialSide from "./Social/SocialSide.js";
-import ShowsSide from "./Shows/ShowsSide";
+import Box from "./Common/Box";
 
 class Navigation extends Component {
   constructor() {
@@ -47,10 +46,13 @@ class Navigation extends Component {
       return (
         <div className="App">
           <Header />
-          <div class="tabletHeaderBox">
-            <ShowsSide />
-            <SocialSide />
+          <div class="showsAndSocialBox">
+            <Shows />
+            <Social />
           </div>
+          <Band nav="tablet" />
+          <Bookings />
+          <Box />
         </div>
       );
     } else {

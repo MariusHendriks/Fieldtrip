@@ -1,202 +1,393 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 $black: #1d1916;
 $grey1: #313131;
+$grey2: #484848;
 $white: #fff;
 
 * {
   overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
 }
-.header {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  height: 110vh;
-  flex-direction: column;
-  background-color: $black;
-}
-.headerIcon {
-  width: 50%;
-  margin-top: 30vh;
-}
-.swipeicon {
-  width: 15%;
-  margin-top: 30vh;
-}
+@media only screen and (max-width: 420px) {
+  .header {
+    width: 100vw;
+    display: flex;
+    align-items: center;
 
-.Yo {
-  height: 100vh;
-  background-color: green;
-}
-h1 {
-  color: $white;
-  text-transform: uppercase;
-}
-.title {
-  overflow: hidden;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.line {
-  background-color: white;
-  height: 2px;
-  width: 40vw;
-  margin-top: -2vh;
-}
+    height: 110vh;
+    flex-direction: column;
+    background-color: $black;
+  }
+  .headerIcon {
+    width: 50%;
+    margin-top: 30vh;
+  }
+  .swipeicon {
+    width: 15%;
+    margin-top: 30vh;
+  }
 
-//Shows
-.shows {
-  clip-path: polygon(0 6%, 100% 0, 100% calc(100% - 10vw), 0 100%);
-  min-height: 30vh;
-  background-color: $grey1;
-  padding-bottom: 10vw;
-  margin-bottom: -10vw;
-  margin-top: -10vw;
-}
-.show {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  padding: 1vh 0 1vh 0;
-}
-.leftSide {
-  width: 20vw;
-  text-align: center;
-  font-size: 9vw;
-  padding-right: 5vw;
-}
-.day {
-  font-weight: bold;
-}
-.month {
-  font-size: 8vw;
-}
-.rightSide {
-  width: 60vw;
-  font-size: 5.5vw;
-}
+  .Yo {
+    height: 100vh;
+    background-color: green;
+  }
+  h1 {
+    color: $white;
+    text-transform: uppercase;
+  }
+  .title {
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .line {
+    background-color: white;
+    height: 2px;
+    width: 40vw;
+    margin-top: -2vh;
+  }
 
-//Band
-.band {
-  background-color: $black;
-  padding-top: 10vw;
-  height: 90vh;
-  min-height: 770px;
-}
-.groupPhoto {
-  width: 100vw;
-  margin-bottom: 5vh;
-}
-.card {
-  background-color: $white;
-  width: 45vw !important;
-  margin: 0 3vw;
-  background-color: $black;
-  border-collapse: separate;
-}
-.cardImageBox {
-  height: 15vh;
-  overflow: hidden;
-  border-radius: 10px 10px 0 0;
-}
-.cardImage {
-  width: 100%;
+  //Shows
+  .shows {
+    clip-path: polygon(0 6%, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    height: 30vh;
+    min-height: 385px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey1;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    margin-bottom: -10vw;
+    margin-top: -10vw;
+  }
+  .show {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 1vh 0 1vh 0;
+  }
+  .leftSide {
+    width: 20vw;
+    text-align: center;
+    font-size: 9vw;
+    padding-right: 5vw;
+  }
+  .day {
+    font-weight: bold;
+  }
+  .month {
+    font-size: 8vw;
+  }
+  .rightSide {
+    width: 60vw;
+    font-size: 5.5vw;
+  }
 
-  max-width: none;
-  object-fit: cover;
-  object-position: 50% 50%;
-}
-.dots {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.BandSliderText {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  background-color: $white;
-  height: 20vh;
-  min-height: 165px;
-  border-radius: 0 0 10px 10px;
-}
-.instrument {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 3vh;
-  min-height: 23px;
-}
-.name {
-  font-weight: bold;
-  font-size: 2.5vh;
-  min-height: 20px;
-}
-.slick-dots {
-  position: relative;
-  bottom: 0;
-  margin-top: 1vh;
-}
-.slick-dots ul {
-  padding-inline-start: 0px;
-}
+  //Band
+  .band {
+    background-color: $black;
+    padding: 10vh 0;
+  }
+  .groupPhoto {
+    width: 100vw;
+    margin-bottom: 5vh;
+  }
+  .card {
+    background-color: $white;
+    width: 45vw !important;
+    margin: 0 3vw;
+    background-color: $black;
+    border-collapse: separate;
+  }
+  .cardImageBox {
+    height: 15vh;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+  .cardImage {
+    width: 100%;
 
-.slick-dots li button:before {
-  color: $white;
-  opacity: 50%;
-  font-size: 9px;
+    max-width: none;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .dots {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .BandSliderText {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: $white;
+    height: 20vh;
+    min-height: 165px;
+    border-radius: 0 0 10px 10px;
+  }
+  .instrument {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3vh;
+    min-height: 23px;
+  }
+  .name {
+    font-weight: bold;
+    font-size: 2.5vh;
+    min-height: 20px;
+  }
+  .slick-dots {
+    position: relative;
+    bottom: 0;
+    margin-top: 1vh;
+  }
+  .slick-dots ul {
+    padding-inline-start: 0px;
+  }
+
+  .slick-dots li button:before {
+    color: $white;
+    opacity: 50%;
+    font-size: 9px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: $white;
+    opacity: 100%;
+    font-size: 9px;
+  }
+  //social
+  .social {
+    margin-top: -6vh;
+    clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0 calc(100% - 6vw));
+    background-color: $grey1;
+    color: $white;
+    text-align: center;
+    font-size: 6vw;
+    height: 40vh;
+    min-height: 357px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .socialImages {
+    display: flex;
+    justify-content: center;
+  }
+  .socialImage {
+    margin: 3vw;
+    height: 27vw;
+    width: calc(100%-27vw);
+  }
+  .bookings {
+    background-color: $black;
+    margin-top: -4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    color: $white;
+    height: 34vh;
+    min-height: 230px;
+  }
+  .bookingText {
+    text-align: center;
+    font-size: 3vh;
+    padding: 1vh 10vw 2vh 10vw;
+  }
+  .bookingsDetails {
+    padding: 0 10vw;
+    font-size: 2.5vh;
+  }
 }
-.slick-dots li.slick-active button:before {
-  color: $white;
-  opacity: 100%;
-  font-size: 9px;
-}
-//social
-.social {
-  margin-top: -6vh;
-  clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0 calc(100% - 6vw));
-  background-color: $grey1;
-  color: $white;
-  text-align: center;
-  font-size: 6vw;
-  height: 40vh;
-  min-height: 357px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media only screen and (min-width: 420px) {
+  .swipeicon {
+    display: none;
+  }
+  .header {
+    width: 100vw;
+
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  .headerIcon {
+    width: 45vw;
+    padding-top: 5vw;
+  }
+  .showsAndSocialBox {
+    color: $white;
+    width: 100vw;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shows {
+    background-color: $grey1;
+    clip-path: polygon(0 2%, 94% 5%, 90% calc(100% - 3vw), 0 100%);
+    width: 50vw;
+    height: 40vh;
+    padding-top: 4vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .show {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 1vh 0 1vh 0;
+  }
+  .leftSide {
+    text-align: center;
+    padding-right: 5vw;
+    padding-left: 2vw;
+  }
+  .day {
+    font-weight: bold;
+    font-size: 4vw;
+    margin-top: -1vh;
+  }
+  .month {
+    font-size: 4vw;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .line {
+    background-color: white;
+    height: 2px;
+    width: 15vw;
+  }
+  .rightSide {
+    font-size: 2.5vw;
+  }
+  h1 {
+    margin-block-end: 0;
+  }
+  .socialImage {
+    width: 10vw;
+    padding: 1vh;
+  }
+  .social {
+    clip-path: polygon(0 5%, 100% 0, 100% calc(100% - 3vw), 0 95%);
+    background-color: $grey2;
+    width: 50vw;
+    display: flex;
+    padding-top: 4vh;
+    height: 35vh;
+    font-size: 2.5vw;
+    text-align: center;
+    justify-content: center;
+  }
+  .band {
+    background-color: $black;
+    color: $white;
+    margin-top: -1px;
+  }
+  .groupPhoto {
+    width: 50vw;
+  }
+  .groupPhotoBox {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .bandCard {
+    width: 70vw;
+    margin-left: 15vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 5vh;
+  }
+  .cardImage {
+    width: 100%;
+  }
+  .card {
+    width: 20vw;
+    color: $black;
+    background-color: $black;
+    margin: 1vw;
+    text-align: center;
+  }
+  .cardImage {
+    height: 15vh;
+    width: 100%;
+
+    max-width: none;
+    object-fit: cover;
+    object-position: 60% 50%;
+  }
+  .cardImageBox {
+    height: 15vh;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+  .instrument {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.3vh;
+    padding-top: 5px;
+  }
+  .name {
+    font-weight: bold;
+    font-size: 2vw;
+    min-height: 20px;
+  }
+  .bio {
+    height: 10vh;
+  }
+  .BandSliderText {
+    border-radius: 0 0 15px 15px;
+    background-color: $white;
+  }
+  .bookings {
+    background-color: $grey2;
+    color: $white;
+    display: flex;
+    padding: 6vh 0;
+    margin-top: -5vh;
+    clip-path: polygon(
+      0% 0%,
+      100% calc(100% - 31vw),
+      100% 100%,
+      0 calc(100% - 5vw)
+    );
+    justify-content: center;
+  }
+  .bookingText {
+    text-align: center;
+    padding-top: 1vh;
+    font-size: 2.5vw;
+  }
+  .box {
+    height: 5vh;
+    margin-top: -5vh;
+    background-color: $black;
+  }
 }
 .italic {
   font-style: italic;
   margin-top: 1vh;
 }
-.socialImages {
-  display: flex;
-  justify-content: center;
-}
-.socialImage {
-  margin: 3vw;
-  height: 27vw;
-  width: calc(100%-27vw);
-}
-.bookings {
-  background-color: $black;
-  margin-top: -4vh;
-  padding-top: 4vh;
-  color: $white;
-  height: 34vh;
-  min-height: 230px;
-}
-.bookingText {
-  text-align: center;
-  font-size: 3vh;
-  padding: 1vh 10vw 2vh 10vw;
-}
-.bookingsDetails {
-  padding: 0 10vw;
-  font-size: 2.5vh;
+h1 {
+  text-transform: uppercase;
+  margin-block-start: 0;
 }

@@ -5,13 +5,15 @@ class Bookings extends Component {
   render() {
     return (
       <div class="bookings">
-        <Title title="Bookings" />
-        <div class="bookingText">
-          Do you want Fieldtrip at your party or event?
+        <div>
+          <Title title="Bookings" />
+          <div class="bookingText">
+            Do you want Fieldtrip at your party or event?
+          </div>
+          <div class="bookingsDetails">Email: Info@fieldtrip.com</div>
+          <div class="bookingsDetails">Phone: 06 224 717 02</div>
+          <div class="bookingsDetails">Or book us on Facebook!</div>
         </div>
-        <div class="bookingsDetails">Email: Info@fieldtrip.com</div>
-        <div class="bookingsDetails">Phone: 06 224 717 02</div>
-        <div class="bookingsDetails">Or book us on Facebook!</div>
       </div>
     );
   }
