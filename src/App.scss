@@ -82,11 +82,11 @@ $white: #fff;
   .leftSide {
     width: 20vw;
     text-align: center;
-    font-size: 2em;
     padding-right: 5vw;
   }
   .day {
     font-weight: bold;
+    font-size: 2em;
   }
   .month {
     font-size: 2em;
@@ -196,6 +196,7 @@ $white: #fff;
   .bookings {
     background-color: $black;
     margin-top: -4vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -239,7 +240,6 @@ $white: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1px;
   }
   .shows {
     background-color: $grey1;
@@ -281,7 +281,7 @@ $white: #fff;
     width: 15vw;
   }
   .rightSide {
-    font-size: 2.5vw;
+    font-size: 1.2em;
   }
   h1 {
     margin-block-end: 0;
@@ -296,7 +296,6 @@ $white: #fff;
     width: 50vw;
     display: flex;
     padding: 5vh 0;
-    font-size: 2.5vw;
     text-align: center;
     justify-content: center;
   }
@@ -318,7 +317,7 @@ $white: #fff;
     width: 85vw;
     display: flex;
     margin: 0 auto;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
   }
   .cardImage {
@@ -355,6 +354,7 @@ $white: #fff;
     min-height: 20px;
   }
   .bio {
+    padding: 10px;
     height: 10vh;
     min-height: 100px;
   }
@@ -368,6 +368,7 @@ $white: #fff;
     display: flex;
     padding: 10vh 0;
     margin-top: -11vh;
+    margin-bottom: -11vh;
     clip-path: polygon(0% 0%, 100% 19%, 100% 100%, 0 calc(100% - 5vw));
     justify-content: center;
   }
@@ -379,8 +380,64 @@ $white: #fff;
   .box {
     height: 5vh;
     min-height: 100px;
-    margin-top: -11vh;
     background-color: $black;
+  }
+
+  .socialImage {
+    width: 5vw;
+  }
+  .italic {
+    font-size: 1.5em;
+  }
+  .followUs {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .headerIcon {
+    width: 25vw;
+  }
+  .showsAndSocialBox {
+    justify-content: space-between;
+  }
+  .shows {
+    width: auto;
+    padding: 7vh;
+  }
+  .band {
+    margin-top: -15vh;
+  }
+  .leftSide {
+    text-align: center;
+    padding-right: 1vw;
+    padding-left: 1vw;
+  }
+  .bandCard {
+    padding-bottom: 5vh;
+  }
+  .bio {
+    padding: 9px;
+  }
+  .card {
+    width: 15vw;
+  }
+  .social {
+    width: auto;
+    font-size: auto;
+    padding: 7vh;
+  }
+  .rightSide {
+    font-size: 1.5em;
+  }
+  .day {
+    margin-top: 0;
+  }
+  .bookings {
+    clip-path: polygon(40% 0%, 60% 0%, 70% 100%, 100% 100%, 0 400%);
+    padding: 4vh;
+  }
+  .showsAndSocialBox {
+    margin-top: -12vh;
   }
 }
 .italic {
