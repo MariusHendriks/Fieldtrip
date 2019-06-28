@@ -31,7 +31,7 @@ class Navigation extends Component {
   render() {
     const { width } = this.state;
     const isMobile = width <= 420;
-    const isTablet = width <= 1000;
+    const isTablet = width <= 1250;
     if (isMobile) {
       return (
         <div className="App">
@@ -42,7 +42,7 @@ class Navigation extends Component {
           <Bookings />
         </div>
       );
-    } else if (isTablet) {
+    } else {
       return (
         <div className="App">
           <Header />
@@ -53,16 +53,6 @@ class Navigation extends Component {
           <Band nav="tablet" />
           <Bookings />
           <Box />
-        </div>
-      );
-    } else {
-      return (
-        <div className="App">
-          <Header />
-          <Shows />
-          <Band />
-          <Social />
-          <Bookings />
         </div>
       );
     }
