@@ -419,7 +419,7 @@ $white: #fff;
     padding: 9px;
   }
   .card {
-    width: 15vw;
+    width: 240px;
   }
   .social {
     width: auto;
@@ -435,6 +435,7 @@ $white: #fff;
   .bookings {
     clip-path: polygon(40% 0%, 60% 0%, 70% 100%, 100% 100%, 0 400%);
     padding: 4vh;
+    margin-top: -14vh;
   }
   .showsAndSocialBox {
     margin-top: -12vh;
