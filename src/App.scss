@@ -356,6 +356,7 @@ $white: #fff;
   .bio {
     padding: 10px;
     height: 10vh;
+    vertical-align: middle;
     min-height: 100px;
   }
   .BandSliderText {
@@ -433,12 +434,32 @@ $white: #fff;
     margin-top: 0;
   }
   .bookings {
-    clip-path: polygon(40% 0%, 60% 0%, 70% 100%, 100% 100%, 0 400%);
-    padding: 4vh;
-    margin-top: -14vh;
+    padding: 0;
+    margin-top: -1px;
+    margin-bottom: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+    background-color: $black;
+  }
+  .bookingBox {
+    background-color: $grey2;
+    padding: 10px;
+    margin: 0px 0px 0 -1px;
+  }
+  .bookingLeft {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%);
+    background-color: $grey2;
+    width: 10vw;
+  }
+  .bookingRight {
+    background-color: $grey2;
+    width: 10vw;
+    clip-path: polygon(100% 100%, 100% 100%, 0% 0%, 0 100%);
   }
   .showsAndSocialBox {
     margin-top: -12vh;
+  }
+  .box {
+    display: none;
   }
 }
 .italic {

@@ -31,7 +31,6 @@ class Navigation extends Component {
   render() {
     const { width } = this.state;
     const isMobile = width <= 420;
-    const isTablet = width <= 1250;
     if (isMobile) {
       return (
         <div className="App">
