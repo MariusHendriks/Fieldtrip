@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { editShow } from "../../store/actions/showActions";
-
+import { deleteShow } from "../../store/actions/showActions";
 class EditShow extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +22,12 @@ class EditShow extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.editShow(this.state);
+  };
+  handleDelete = e => {
+    e.preventDefault();
+    if (window.confirm("Are you sure you wish to delete this item?")) {
+      this.props.deleteShow(this.state);
+    }
   };
   render() {
     const { show, auth } = this.props;
@@ -68,6 +74,7 @@ class EditShow extends Component {
           </div>
           <button>Edit</button>
         </form>
+        <button onClick={this.handleDelete}>Delete</button>
       </div>
     );
   }
@@ -79,7 +86,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    editShow: show => dispatch(editShow(show))
+    editShow: show => dispatch(editShow(show)),
+    deleteShow: show => dispatch(deleteShow(show))
   };
 };
 export default connect(

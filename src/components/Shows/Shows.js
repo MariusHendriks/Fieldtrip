@@ -29,8 +29,8 @@ class Shows extends Component {
               return (
                 <div key={shows.id}>
                   <Show
-                    month={<Moment format="MMM">{shows.month}</Moment>}
-                    date={<Moment format="DD">{shows.month}</Moment>}
+                    month={<Moment format="MMM">{shows.date}</Moment>}
+                    date={<Moment format="DD">{shows.date}</Moment>}
                     location={shows.location}
                     vanue={shows.vanue}
                     event={shows.event}
@@ -59,6 +59,6 @@ const mapStateToProps = state => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: "shows", limit: 3, orderBy: ["date", "desc"] }
+    { collection: "shows", limit: 3, orderBy: ["date", "asc"] }
   ])
 )(Shows);

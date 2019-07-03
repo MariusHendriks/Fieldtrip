@@ -30,3 +30,18 @@ export const editShow = show => {
       });
   };
 };
+export const deleteShow = show => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("shows")
+      .doc(show.id)
+      .delete()
+      .then(() => {
+        dispatch({ type: "DELETE_SHOW", show: show });
+      })
+      .catch(err => {
+        dispatch({ type: "DELETE_SHOW_ERROR", err });
+      });
+  };
+};

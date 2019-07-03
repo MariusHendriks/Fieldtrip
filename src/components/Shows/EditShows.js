@@ -25,5 +25,5 @@ const mapStateToProps = state => {
 };
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "shows", orderBy: ["date", "desc"] }])
+  firestoreConnect([{ collection: "shows", orderBy: ["date", "asc"] }])
 )(EditShows);
