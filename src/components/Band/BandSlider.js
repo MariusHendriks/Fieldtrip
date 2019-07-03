@@ -27,7 +27,7 @@ class BandSlider extends Component {
       )
     };
     return (
-      <div class="slider">
+      <div className="slider">
         <Slider {...settings}>
           <BandCard
             instrument="Vocal"

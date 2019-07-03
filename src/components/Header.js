@@ -6,10 +6,10 @@ import "../App.scss";
 class Header extends Component {
   render() {
     return (
-      <div class="header">
-        <img class="headerIcon" src={logo} alt="Logo" />
+      <div className="header">
+        <img className="headerIcon" src={logo} alt="Logo" />
 
-        <img class="swipeicon" src={swipe} alt="Swipe icon" />
+        <img className="swipeicon" src={swipe} alt="Swipe icon" />
       </div>
     );
   }

@@ -5,7 +5,7 @@ import ShowDetails from "./ShowDetails.js";
 class Show extends Component {
   render() {
     return (
-      <div class="show">
+      <div className="show">
         <ShowDate month={this.props.month} date={this.props.date} />
         <ShowDetails
           event={this.props.event}
