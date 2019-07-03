@@ -4,8 +4,10 @@ import Title from "../Common/Title";
 class Bookings extends Component {
   render() {
     return (
-      <div className="bookings">
-        <div>
+      <div class="bookings">
+        <div class="bookingLeft" />
+        <div class="bookingBox">
+
           <Title title="Bookings" />
           <div className="bookingText">
             Do you want Fieldtrip at your party or event?
@@ -14,6 +16,7 @@ class Bookings extends Component {
           <div className="bookingsDetails">Phone: 06 224 717 02</div>
           <div className="bookingsDetails">Or book us on Facebook!</div>
         </div>
+        <div class="bookingRight" />
       </div>
     );
   }
