@@ -15,11 +15,11 @@ class Band extends Component {
   }
   render() {
     return (
-      <div class="band">
+      <div className="band">
         <Title title="The Band" />
-        <div class="groupPhotoBox">
+        <div className="groupPhotoBox">
           <img
-            class="groupPhoto"
+            className="groupPhoto"
             src={groupPhoto}
             alt="Grouphoto of fieldtrip"
           />
