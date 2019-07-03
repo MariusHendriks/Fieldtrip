@@ -1,37 +1,37 @@
 import React, { Component } from "react";
 import Show from "./Show";
 import Title from "../Common/Title";
+import { connect } from "react-redux";
 
 class Shows extends Component {
   render() {
+    const { shows } = this.props;
+    console.log(this.props);
     return (
-      <div class="shows">
+      <div className="shows">
         <div>
           <Title title="Shows" />
-          <Show
-            month="jan"
-            date="25"
-            event="Kermis mariaheide"
-            vanue="Brouwer"
-            location="mariaheide"
-          />
-          <Show
-            month="feb"
-            date="1"
-            event="Pop en Colour"
-            vanue="Streekpark Kienehoef"
-            location="Sint-Oederode"
-          />
-          <Show
-            month="apr"
-            date="11"
-            event="Argo (Privé)"
-            vanue="Ergenst op aarde"
-            location="Somewhere"
-          />
+          {shows &&
+            shows.map(shows => {
+              return (
+                <Show
+                  month={shows.month}
+                  date={shows.date}
+                  location={shows.location}
+                  vanue={shows.vanue}
+                  event={shows.event}
+                  key={shows.id}
+                />
+              );
+            })}
         </div>
       </div>
     );
   }
 }
-export default Shows;
+const mapStateToProps = state => {
+  return {
+    shows: state.shows.shows
+  };
+};
+export default connect(mapStateToProps)(Shows);

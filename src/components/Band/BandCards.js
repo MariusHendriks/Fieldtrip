@@ -9,7 +9,7 @@ class BandCards extends Component {
   render() {
     return (
       <div>
-        <div class="bandCard">
+        <div className="bandCard">
           <BandCard
             instrument="Vocal"
             name="Renee Vloet"

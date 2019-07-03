@@ -3,9 +3,9 @@ import React, { Component } from "react";
 class Title extends Component {
   render() {
     return (
-      <div class="title">
+      <div className="title">
         <h1>{this.props.title}</h1>
-        <div class="line" />
+        <div className="line" />
       </div>
     );
   }
