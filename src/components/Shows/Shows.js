@@ -17,14 +17,13 @@ class Shows extends Component {
           {shows &&
             shows.map(shows => {
               return (
-                <div>
+                <div key={shows.id}>
                   <Show
                     month={<Moment format="MMM">{shows.month}</Moment>}
                     date={<Moment format="DD">{shows.month}</Moment>}
                     location={shows.location}
                     vanue={shows.vanue}
                     event={shows.event}
-                    key={shows.id}
                   />
                 </div>
               );
