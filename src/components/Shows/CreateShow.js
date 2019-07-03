@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 class CreateShow extends Component {
   state = {
-    month: "",
     date: "",
     location: "",
     vanue: "",
@@ -24,10 +23,6 @@ class CreateShow extends Component {
       <div className="SigninForm">
         <form onSubmit={this.handleSubmit}>
           <h5>Sign in</h5>
-          <div className="input-field">
-            <label htmlFor="month">Month</label>
-            <input type="month" id="month" onChange={this.handleChange} />
-          </div>
           <div className="input-field">
             <label htmlFor="date">Date</label>
             <input type="date" id="date" onChange={this.handleChange} />
