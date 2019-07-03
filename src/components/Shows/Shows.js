@@ -7,13 +7,23 @@ import { compose } from "redux";
 import Moment from "react-moment";
 
 class Shows extends Component {
+  isEmpty = map => {
+    for (var key in map) {
+      if (map.hasOwnProperty(key)) {
+        return false;
+      }
+    }
+    return true;
+  };
   render() {
     const { shows } = this.props;
-
-    return (
-      <div className="shows">
+    console.log(shows);
+    let content = "";
+    if (this.isEmpty(shows)) {
+      content = <div>There are currently no bookings</div>;
+    } else {
+      content = (
         <div>
-          <Title title="Shows" />
           {shows &&
             shows.map(shows => {
               return (
@@ -28,6 +38,14 @@ class Shows extends Component {
                 </div>
               );
             })}
+        </div>
+      );
+    }
+    return (
+      <div className="shows">
+        <div>
+          <Title title="Shows" />
+          {content}
         </div>
       </div>
     );

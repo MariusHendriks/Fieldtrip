@@ -1,6 +1,5 @@
 export const createShow = show => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    // make async call
     const firestore = getFirestore();
     firestore
       .collection("shows")
@@ -12,7 +11,22 @@ export const createShow = show => {
         dispatch({ type: "CREATE_SHOW", show: show });
       })
       .catch(err => {
-        dispatch({ type: "CREATE_PROJECT_ERROR", err });
+        dispatch({ type: "CREATE_SHOW_ERROR", err });
+      });
+  };
+};
+export const editShow = show => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("shows")
+      .doc(show.id)
+      .update({ ...show })
+      .then(() => {
+        dispatch({ type: "UPDATE_SHOW", show: show });
+      })
+      .catch(err => {
+        dispatch({ type: "UPDATE_SHOW_ERROR", err });
       });
   };
 };
