@@ -6,7 +6,6 @@ export const createShow = show => {
       .collection("shows")
       .add({
         ...show,
-        name: "Mark",
         createdAt: new Date()
       })
       .then(() => {

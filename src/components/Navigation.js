@@ -1,60 +1,23 @@
 import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 //components
-import Header from "./Header";
-import Shows from "./Shows/Shows";
-import Band from "./Band/Band";
-import Social from "./Social/Social";
-import Bookings from "./Bookings/Bookings";
-import Box from "./Common/Box";
+import AppDivider from "./AppDivider";
+import CreateShow from "./Shows/CreateShow";
+import Signin from "./Auth/Signin";
+import EditShows from "./Shows/EditShows";
 
 class Navigation extends Component {
-  constructor() {
-    super();
-    this.state = {
-      width: window.innerWidth
-    };
-  }
-
-  componentWillMount() {
-    window.addEventListener("resize", this.handleWindowSizeChange);
-  }
-
-  // make sure to remove the listener
-  // when the component is not mounted anymore
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleWindowSizeChange);
-  }
-
-  handleWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth });
-  };
   render() {
-    const { width } = this.state;
-    const isMobile = width <= 420;
-    if (isMobile) {
-      return (
-        <div className="App">
-          <Header />
-          <Shows />
-          <Band />
-          <Social />
-          <Bookings />
-        </div>
-      );
-    } else {
-      return (
-        <div className="App">
-          <Header />
-          <div className="showsAndSocialBox">
-            <Shows />
-            <Social />
-          </div>
-          <Band nav="tablet" />
-          <Bookings />
-          <Box />
-        </div>
-      );
-    }
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={AppDivider} />
+          <Route exact path="/createShow" component={CreateShow} />
+          <Route exact path="/editShows" component={EditShows} />
+          <Route exact path="/login" component={Signin} />
+        </Switch>
+      </BrowserRouter>
+    );
   }
 }
 export default Navigation;

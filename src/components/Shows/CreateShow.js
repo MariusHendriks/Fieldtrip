@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createShow } from "../../store/actions/showActions";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 class CreateShow extends Component {
   state = {
@@ -19,6 +20,8 @@ class CreateShow extends Component {
     this.props.createShow(this.state);
   };
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/" />;
     return (
       <div className="SigninForm">
         <form onSubmit={this.handleSubmit}>
@@ -47,12 +50,17 @@ class CreateShow extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
 const mapDispatchToProps = dispatch => {
   return {
     createShow: show => dispatch(createShow(show))
   };
 };
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CreateShow);

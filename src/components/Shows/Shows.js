@@ -9,7 +9,7 @@ import Moment from "react-moment";
 class Shows extends Component {
   render() {
     const { shows } = this.props;
-    console.log(this.props);
+
     return (
       <div className="shows">
         <div>
@@ -34,12 +34,13 @@ class Shows extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
   return {
     shows: state.firestore.ordered.shows
   };
 };
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "shows" }])
+  firestoreConnect([
+    { collection: "shows", limit: 3, orderBy: ["date", "desc"] }
+  ])
 )(Shows);
