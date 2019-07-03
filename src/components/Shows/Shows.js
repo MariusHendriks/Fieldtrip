@@ -4,6 +4,7 @@ import Title from "../Common/Title";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import Moment from "react-moment";
 
 class Shows extends Component {
   render() {
@@ -16,14 +17,16 @@ class Shows extends Component {
           {shows &&
             shows.map(shows => {
               return (
-                <Show
-                  month={shows.month}
-                  date={shows.date}
-                  location={shows.location}
-                  vanue={shows.vanue}
-                  event={shows.event}
-                  key={shows.id}
-                />
+                <div>
+                  <Show
+                    month={<Moment format="MMM">{shows.month}</Moment>}
+                    date={<Moment format="DD">{shows.month}</Moment>}
+                    location={shows.location}
+                    vanue={shows.vanue}
+                    event={shows.event}
+                    key={shows.id}
+                  />
+                </div>
               );
             })}
         </div>
@@ -34,7 +37,7 @@ class Shows extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    shows: state.shows.shows
+    shows: state.firestore.ordered.shows
   };
 };
 export default compose(
