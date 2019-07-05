@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { editShow } from "../../store/actions/showActions";
-import { deleteShow } from "../../store/actions/showActions";
+import { editShow, deleteShow } from "../../store/actions/showActions";
+
 class EditShow extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,8 @@ class EditShow extends Component {
       date: this.props.show.date,
       vanue: this.props.show.vanue,
       event: this.props.show.event,
-      id: this.props.show.id
+      id: this.props.show.id,
+      eventToEdit: ""
     };
   }
   handleChange = e => {
@@ -22,6 +23,9 @@ class EditShow extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.editShow(this.state);
+    this.setState({
+      eventToEdit: this.state.event
+    });
   };
   handleDelete = e => {
     e.preventDefault();
@@ -29,52 +33,63 @@ class EditShow extends Component {
       this.props.deleteShow(this.state);
     }
   };
+  componentDidMount = e => {
+    this.setState({
+      eventToEdit: this.state.event
+    });
+  };
   render() {
     const { show, auth } = this.props;
+
     if (!auth.uid) return <Redirect to="/" />;
     console.log(show);
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div className="input-field">
-            <label htmlFor="date">Date</label>
-            <input
-              value={this.state.date}
-              type="date"
-              id="date"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="input-field">
-            <label htmlFor="location">Location</label>
-            <input
-              type="text"
-              value={this.state.location}
-              id="location"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="input-field">
-            <label htmlFor="vanue">Vanue</label>
-            <input
-              value={this.state.vanue}
-              type="text"
-              id="vanue"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="input-field">
-            <label htmlFor="event">Event</label>
-            <input
-              value={this.state.event}
-              type="text"
-              id="event"
-              onChange={this.handleChange}
-            />
-          </div>
-          <button>Edit</button>
-        </form>
-        <button onClick={this.handleDelete}>Delete</button>
+      <div class="editShowContainer">
+        <h2 class="showHeader">Edit show for {this.state.eventToEdit}</h2>
+        <div class="SigninForm">
+          <form onSubmit={this.handleSubmit}>
+            <div className="input-field">
+              <label htmlFor="date">Date</label>
+              <input
+                value={this.state.date}
+                type="date"
+                id="date"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="location">Location</label>
+              <input
+                type="text"
+                value={this.state.location}
+                id="location"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="vanue">Vanue</label>
+              <input
+                value={this.state.vanue}
+                type="text"
+                id="vanue"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="event">Event</label>
+              <input
+                value={this.state.event}
+                type="text"
+                id="event"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button class="btn">Edit</button>
+            <div class="btn" onClick={this.handleDelete}>
+              Delete
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

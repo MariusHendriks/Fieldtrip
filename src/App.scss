@@ -13,6 +13,44 @@ $white: #fff;
   font-family: "Roboto", sans-serif;
 }
 @media only screen and (max-width: 420px) {
+  .input-field {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+  }
+  .editShowForms {
+    display: flex;
+    justify-content: space-between;
+  }
+  .SigninFormContainer {
+    height: 100vh;
+    background-color: $black;
+  }
+  .Editshows {
+    min-height: 100vh;
+    color: white;
+    background-color: $black;
+  }
+  input {
+    width: 40vw;
+  }
+
+  .showHeader {
+    text-align: center;
+    margin-block-end: 0;
+  }
+  .editShowForms {
+    margin-bottom: 40px;
+  }
+
+  .SigninForm {
+    color: $white;
+    display: flex;
+    justify-content: center;
+    background-color: $black;
+    overflow: hidden;
+  }
   .header {
     width: 100vw;
     display: flex;
@@ -44,6 +82,7 @@ $white: #fff;
     width: 100vw;
     display: flex;
     justify-content: center;
+
     align-items: center;
     flex-direction: column;
   }
@@ -233,6 +272,7 @@ $white: #fff;
     width: 45vw;
     padding-top: 5vw;
   }
+
   .showsAndSocialBox {
     color: $white;
     width: 100vw;
@@ -270,6 +310,7 @@ $white: #fff;
     font-size: 2em;
   }
   .title {
+    margin-bottom: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -393,6 +434,20 @@ $white: #fff;
   .followUs {
     font-size: 1.2em;
   }
+  .SigninFormContainer {
+    min-height: 100vh;
+    background-color: $black;
+    color: $white;
+  }
+  input {
+    font-size: 0.6em;
+  }
+  .input-field {
+    display: flex;
+    font-size: 1.6em;
+    justify-content: space-between;
+    padding: 1% 10%;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .headerIcon {
@@ -461,6 +516,10 @@ $white: #fff;
   .box {
     display: none;
   }
+  .SigninForm {
+    width: 420px;
+    margin: 0 auto;
+  }
 }
 .italic {
   font-style: italic;
@@ -486,4 +545,33 @@ button {
   background-color: $grey2;
   color: white;
   border: 0;
+}
+.noscroll {
+  overflow: hidden;
+}
+.btn-full {
+  width: 100vw;
+  margin-bottom: 3vh;
+  height: 30px;
+}
+.btn-2 {
+  width: 150px;
+  height: 70px;
+  font-size: 0.7em;
+}
+.btn {
+  width: 100px;
+  height: 40px;
+  background-color: $grey2;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.3em;
+  margin: 5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editShowContainer {
+  padding: 0 30px;
 }
