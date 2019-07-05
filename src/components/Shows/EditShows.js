@@ -6,6 +6,7 @@ import { compose } from "redux";
 import EditShow from "./EditShow";
 import Title from "../Common/Title";
 import { Link } from "react-router-dom";
+
 class EditShows extends Component {
   render() {
     const { shows } = this.props;

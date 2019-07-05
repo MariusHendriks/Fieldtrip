@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { editShow, deleteShow } from "../../store/actions/showActions";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 class EditShow extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,7 @@ class EditShow extends Component {
     this.setState({
       eventToEdit: this.state.event
     });
+    toast("Update complete");
   };
   handleDelete = e => {
     e.preventDefault();
@@ -45,8 +47,8 @@ class EditShow extends Component {
     console.log(show);
     return (
       <div class="editShowContainer">
-        <h2 class="showHeader">Edit show for {this.state.eventToEdit}</h2>
         <div class="SigninForm">
+          <h2 class="showHeader">Edit show for {this.state.eventToEdit}</h2>
           <form onSubmit={this.handleSubmit}>
             <div className="input-field">
               <label htmlFor="date">Date</label>
@@ -90,6 +92,7 @@ class EditShow extends Component {
             </div>
           </form>
         </div>
+        <ToastContainer />
       </div>
     );
   }
